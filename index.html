@@ -5,6 +5,10 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
   </head>
   <body>
-    <h1> Hello </h1>
+    <h1 id="greeting"> Hello </h1>
+    
+    <script>
+      document.getElementById("greeting") += document.Telegram.WebApp.initDataUnsafe.user.first_name;
+    </script>
   </body>
 </html>
