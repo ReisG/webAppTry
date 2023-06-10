@@ -1,14 +1,76 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  </head>
-  <body>
-    <h1 id="greeting"> Hello </h1>
-    
-    <script>
-      document.getElementById("greeting").innerHTML += document.Telegram.WebApp.initDataUnsafe.user.first_name;
-    </script>
-  </body>
-</html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Form</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+  <!-- Bootstrap Time Picker CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Event Form</h1>
+    <form>
+      <div class="row mb-3">
+        <div class="col">
+          <label for="event-name" class="form-label">Event Name</label>
+          <input type="text" class="form-control" id="event-name" placeholder="Enter event name">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <label for="start-time" class="form-label">Start Time</label>
+          <div class="input-group bootstrap-timepicker timepicker">
+            <input type="text" class="form-control" id="start-time" placeholder="Enter start time">
+            <span class="input-group-addon"><i class="bi bi-clock"></i></span>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <label for="end-time" class="form-label">End Time</label>
+          <div class="input-group bootstrap-timepicker timepicker">
+            <input type="text" class="form-control" id="end-time" placeholder="Enter end time">
+            <span class="input-group-addon"><i class="bi bi-clock"></i></span>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <label for="event-location" class="form-label">Event Location</label>
+          <div id="map"></div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap Time Picker JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
+  <!-- Google Maps JS -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+  <script>
+    // Initialize the time picker
+    $('.timepicker').timepicker({
+      showMeridian: false,
+      minuteStep: 1,
+      defaultTime: false
+    });
+
+    // Initialize the map
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: -34.397, lng: 150.644},
+        zoom: 8
+      });
+    }
+  </script>
+</body>
