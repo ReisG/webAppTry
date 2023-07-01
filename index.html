@@ -45,7 +45,7 @@
       </div>
       <div class="row mb-3">
         <div class="col">
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button onclick="sendMessage" type="submit" class="btn btn-primary">Submit</button>
         </div>
       </div>
     </form>
@@ -71,6 +71,11 @@
         center: {lat: -34.397, lng: 150.644},
         zoom: 8
       });
+    }
+
+    function sendMessage() {
+      var event_name = document.getElementById("event-name").innerText;
+      window.Telegram.WebApp.sendData(event_name);
     }
   </script>
 </body>
