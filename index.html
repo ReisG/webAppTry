@@ -63,7 +63,8 @@
   <script>
     document.getElementById("Title").innerHTML += " " + window.Telegram.WebApp.initDataUnsafe.user.first_name;
     var mainButton = window.Telegram.WebApp.MainButton;
-    mainButton("mainButtonClicked");
+    mainButton.onClick("mainButtonClicked");
+    mainButton.show();
     
     // Initialize the time picker
     $('.timepicker').timepicker({
@@ -73,12 +74,12 @@
     });
 
     // Initialize the map
-    function initMap() {
+    /*function initMap() {
       var map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: -34.397, lng: 150.644},
         zoom: 8
       });
-    }
+    }*/
 
     function mainButtonClicked() {
       alert("HELLO");
