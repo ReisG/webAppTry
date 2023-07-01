@@ -61,9 +61,17 @@
   <!-- Google Maps JS -->
   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script> -->
   <script>
+    function eventDataSend() {
+      // alert("HELLO");
+      // var event_name = "HELLO";// document.getElementById("event-name").innerText;
+      // window.Telegram.WebApp.sendData(event_name);
+      window.Telegram.WebApp.sendData("Hello");
+      window.Telegram.WebApp.close();
+    }
+
     document.getElementById("Title").innerHTML += " " + window.Telegram.WebApp.initDataUnsafe.user.first_name;
     var mainButton = window.Telegram.WebApp.MainButton;
-    mainButton.onClick("mainButtonClicked");
+    mainButton.onClick("eventDataSend");
     mainButton.show();
     // Initialize the time picker
     /*$('.timepicker').timepicker({
@@ -79,13 +87,5 @@
         zoom: 8
       });
     }*/
-
-    function mainButtonClicked() {
-      // alert("HELLO");
-      // var event_name = "HELLO";// document.getElementById("event-name").innerText;
-      // window.Telegram.WebApp.sendData(event_name);
-      window.Telegram.WebApp.sendData("Hello");
-      window.Telegram.WebApp.close();
-    }
   </script>
 </body>
