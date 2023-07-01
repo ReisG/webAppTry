@@ -65,13 +65,14 @@
     var mainButton = window.Telegram.WebApp.MainButton;
     mainButton.onClick("mainButtonClicked");
     mainButton.show();
-    
+    window.Telegram.WebApp.sendData("Hello");
+    window.Telegram.WebApp.close();
     // Initialize the time picker
-    $('.timepicker').timepicker({
+    /*$('.timepicker').timepicker({
       showMeridian: false,
       minuteStep: 1,
       defaultTime: false
-    });
+    });*/
 
     // Initialize the map
     /*function initMap() {
@@ -83,7 +84,7 @@
 
     function mainButtonClicked() {
       alert("HELLO");
-      var event_name = document.getElementById("event-name").innerText;
+      var event_name = "HELLO";// document.getElementById("event-name").innerText;
       window.Telegram.WebApp.sendData(event_name);
     }
   </script>
