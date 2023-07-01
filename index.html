@@ -60,6 +60,7 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
   <script>
     document.getElementById("Title").innerHTML += " " + window.Telegram.WebApp.initDataUnsafe.user.first_name;
+    window.Telegram.WebApp.MainButton.show();
     
     // Initialize the time picker
     $('.timepicker').timepicker({
