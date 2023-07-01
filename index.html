@@ -44,23 +44,26 @@
           <div id="map"></div>
         </div>
       </div>
+      <!--
       <div class="row mb-3">
         <div class="col">
           <button onclick="sendMessage" type="submit" class="btn btn-primary">Submit</button>
         </div>
       </div>
+      -->
     </form>
   </div>
 
   <!-- Bootstrap JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
   <!-- Bootstrap Time Picker JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script> -->
   <!-- Google Maps JS -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script> -->
   <script>
     document.getElementById("Title").innerHTML += " " + window.Telegram.WebApp.initDataUnsafe.user.first_name;
-    window.Telegram.WebApp.MainButton.show();
+    var mainButton = window.Telegram.WebApp.MainButton;
+    mainButton("mainButtonClicked");
     
     // Initialize the time picker
     $('.timepicker').timepicker({
@@ -77,7 +80,8 @@
       });
     }
 
-    function sendMessage() {
+    function mainButtonClicked() {
+      alert("HELLO");
       var event_name = document.getElementById("event-name").innerText;
       window.Telegram.WebApp.sendData(event_name);
     }
