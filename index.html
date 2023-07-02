@@ -64,7 +64,7 @@
   <script>
     function eventDataSend() {
       // alert("HELLO");
-      var event_name = document.getElementById("event-name").innerText;
+      var event_name = document.getElementById("event-name").value;
       // window.Telegram.WebApp.sendData(event_name);
       var data = {"event_data" : event_data};
 
@@ -77,6 +77,7 @@
     var mainButton = window.Telegram.WebApp.MainButton;
     mainButton.onClick(eventDataSend);
     mainButton.show();
+    window.Telegram.WebApp.ready()
     // Initialize the time picker
     /*$('.timepicker').timepicker({
       showMeridian: false,
