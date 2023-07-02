@@ -75,7 +75,8 @@
 
     document.getElementById("Title").innerHTML += " " + window.Telegram.WebApp.initDataUnsafe.user.first_name;
     var mainButton = window.Telegram.WebApp.MainButton;
-    mainButton.onClick(eventDataSend);
+    // mainButton.onClick(eventDataSend);
+    Telegram.WebApp.onEvent('mainButtonClicked', eventDataSend);
     mainButton.show();
     window.Telegram.WebApp.ready();
     alert("ready to go");
